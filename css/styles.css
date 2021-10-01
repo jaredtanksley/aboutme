@@ -65,9 +65,6 @@ background: -webkit-linear-gradient(#E88100, grey);
 .navbar-wrapper .navbar .container {
   width: auto;
 }
-.navbar{
-  margin-left: 100px;
-}
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
