@@ -5,13 +5,14 @@
   padding-bottom: 100px;
   width: 100%;
   text-align: center;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Blinker', cursive;
   position: relative;
 
 }
 body {
-  margin: 0px;
-  background-color: #171717;
+  margin: 50px;
+  background-color: #151515;
+  background: -webkit-linear-gradient(black, #151515, grey, #151515);
   color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -22,19 +23,71 @@ h1 {
   padding-top: 100px;
   font-size: 100px;
   color: white;
-  background: -webkit-linear-gradient(#ffe6e6, #ffabe1, #a685e2, #6155a6);
+  background: -webkit-linear-gradient(white, #058A87);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
 }
 h2 {
-  font-size: 32px;
+  font-size: 48px;
   font-family: 'Amatic SC', cursive;
 
 }
 .aboutme {
-background: -webkit-linear-gradient(#ffe6e6, #ffabe1, #a685e2, #6155a6);
+background: -webkit-linear-gradient(#E88100, grey);
   font-size: 80px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 50px;
+}
+.Telecommunication {
+  color: black;
+}
+.bottom-container {
+  margin-top: 25px;
+}
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+.navbar{
+  background: transparent;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.skills{
+  margin-bottom: 100px;
+}
+.row{
+  margin-bottom: 50px;
+}
+.featurette-heading{
+  margin-bottom: 50px;
+}
+.lead{
+  padding: 30px;
 }
