@@ -1,21 +1,21 @@
-.top-div {
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  padding-bottom: 100px;
-  width: 100%;
-  text-align: center;
-  font-family: 'Bonheur Royale', cursive;
-  position: relative;
-
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+.top-div {
+    text-align: center;
+    font-family: 'Bonheur Royale', cursive;
+  }
+  
 body {
   background-color: #000000;
-    color: white;
+  color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-
 }
+
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -23,23 +23,26 @@ h1 {
   font-size: 100px;
   color: white;
 }
+
 h2 {
   font-size: 48px;
   font-family: 'Amatic SC', cursive;
-  
+}
 
-}
 .aboutme {
-color: #0fa79f;
-font-size: 80px;
-padding-bottom: 50px;
+  color: #0fa79f;
+  font-size: 80px;
+  margin-bottom: 20px; /* Adjusted margin */
 }
+
 .Telecommunication {
   color: black;
 }
+
 .bottom-container {
   margin-top: 25px;
 }
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -47,60 +50,82 @@ padding-bottom: 50px;
   left: 0;
   z-index: 20;
 }
-html, body {
-  margin:0px;
-  height:100%;
-}
-.text{
+
+.text {
   padding: 30px;
 }
-
-.top-div {
-  background: url('background.jpg');
-  object-fit: contain;
+.profile {
   width: 100%;
-  height: 100%;
-  margin-bottom: 0px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: inline; /* Ensures image behaves correctly */
+  margin-top: 0px; /* Adjust as needed */
+  margin-bottom: 20px; /* Adjust as needed */
 }
-.bottom-half{
+.bottom-half {
+  padding-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
   padding-bottom: 3%;
 }
+
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
 }
+
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
 }
+
 .navbar-wrapper .navbar .container {
   width: auto;
 }
+
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
 }
+
 .marketing h2 {
   font-weight: 400;
 }
+
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
 }
-.skills{
+
+.skills {
   margin-bottom: 100px;
 }
-.row{
+
+.row {
   margin-bottom: 50px;
 }
-.featurette-heading{
+
+.featurette-heading {
   margin-bottom: 50px;
 }
-.lead{
+
+.lead {
   padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .aboutme {
+    font-size: 50px;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+}
+
+.featurette-divider {
+  margin: 80px 0px;
+}
+
+.featurette .col-md-7 {
+  padding: 20px;
 }
