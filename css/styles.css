@@ -3,10 +3,10 @@ body, html {
   padding: 0;
   height: 100%;
 }
-
 .top-div {
     text-align: center;
     font-family: 'Bonheur Royale', cursive;
+    padding-top: 100px;
   }
   
 body {
@@ -19,8 +19,8 @@ body {
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 100px;
-  font-size: 100px;
+  padding-top: 0px;
+  font-size: 80px;
   color: white;
 }
 
@@ -31,8 +31,8 @@ h2 {
 
 .aboutme {
   color: #0fa79f;
-  font-size: 80px;
-  margin-bottom: 20px; /* Adjusted margin */
+  font-size: 50px;
+  margin-bottom: 0px;
 }
 
 .Telecommunication {
@@ -40,7 +40,7 @@ h2 {
 }
 
 .bottom-container {
-  margin-top: 25px;
+  margin-top: 0px;
 }
 
 .navbar-wrapper {
@@ -50,40 +50,25 @@ h2 {
   left: 0;
   z-index: 20;
 }
-
 .text {
   padding: 30px;
 }
 .profile {
   width: 100%;
-  display: inline; /* Ensures image behaves correctly */
-  margin-top: 0px; /* Adjust as needed */
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-top: 0px; 
+  margin-bottom: 0px; 
 }
 .bottom-half {
-  padding-top: 5%;
+  padding-top: 0%;
   margin-left: 5%;
   margin-right: 5%;
   padding-bottom: 3%;
 }
-
-/* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper > .container {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.navbar-wrapper .navbar {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .navbar-wrapper .navbar .container {
-  width: auto;
-}
 
+}
 .marketing .col-lg-4 {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
@@ -102,30 +87,27 @@ h2 {
 
 .row {
   margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 .featurette-heading {
   margin-bottom: 50px;
 }
-
 .lead {
   padding: 30px;
 }
-
-@media (max-width: 768px) {
-  .aboutme {
-    font-size: 50px;
-  }
-  
   h1 {
     font-size: 50px;
   }
-}
 
 .featurette-divider {
-  margin: 80px 0px;
+  margin-bottom: 0px;
 }
 
 .featurette .col-md-7 {
   padding: 20px;
+}
+
+.featurette-image {
+  padding-top: 40px;
 }
