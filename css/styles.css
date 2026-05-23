@@ -1,113 +1,334 @@
-body, html {
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
-.top-div {
-    text-align: center;
-    font-family: 'Bonheur Royale', cursive;
-    padding-top: 100px;
-  }
-  
+
 body {
-  background-color: #000000;
+  background: #050505;
   color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  position: relative;
 }
 
-h1 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  font-size: 80px;
+/* Purple glow background */
+body::before {
+  content: '';
+  position: fixed;
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(111, 90, 255, 0.45),
+    transparent 70%
+  );
+  filter: blur(90px);
+  z-index: -1;
+}
+
+/* Better text selection */
+::selection {
+  background: #6f5aff;
   color: white;
 }
 
-h2 {
-  font-size: 48px;
-  font-family: 'Amatic SC', cursive;
+a {
+  transition: 0.3s ease;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: 14px;
+}
+
+.navbar {
+  width: fit-content;
+  margin: auto;
+  padding: 12px 22px;
+  border-radius: 24px;
+  backdrop-filter: blur(18px);
+  background: rgba(12, 12, 12, 0.72);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.45),
+    0 0 25px rgba(111,90,255,.08);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0;
+}
+
+.navbar-nav li {
+  list-style: none;
+}
+
+.navbar-nav li a {
+  padding: 0;
+}
+
+.navbar-nav li a:hover {
+  transform: translateY(-4px);
+}
+
+.navbar-nav i {
+  font-size: 32px !important;
+  color: rgba(255,255,255,.85) !important;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.top-div {
+  text-align: center;
+  padding-top: 240px;
+  padding-bottom: 110px;
+  position: relative;
+}
+
+.text {
+  padding: 30px;
+  max-width: 950px;
+  margin: auto;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 800;
+  color: white;
+  line-height: 0.95;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .aboutme {
-  color: #0fa79f;
-  font-size: 50px;
-  margin-bottom: 0px;
+  color: rgba(255,255,255,.72);
+  font-size: 1.45rem;
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.8;
 }
 
-.Telecommunication {
-  color: black;
-}
-
-.bottom-container {
-  margin-top: 0px;
-}
-
-.navbar-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
-}
-.text {
-  padding: 30px;
-}
+/* Hero image */
 .profile {
-  width: 100%;
-  margin-top: 0px; 
-  margin-bottom: 0px; 
+  width: 88%;
+  max-width: 1100px;
+  margin-top: 70px;
+  border-radius: 36px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.7),
+    0 0 60px rgba(111,90,255,.15);
 }
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
 .bottom-half {
-  padding-top: 0%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-bottom: 3%;
-}
-.navbar-wrapper .navbar .container {
-
-}
-.marketing .col-lg-4 {
-  margin-bottom: 0px;
-  text-align: center;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 30px 80px;
 }
 
-.marketing h2 {
-  font-weight: 400;
+/* Remove white divider lines */
+.featurette-divider {
+  border: none;
+  margin: 80px 0;
 }
 
-.marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
+.skills,
+.featurette-heading,
+h2 {
+  font-size: 3.4rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
 }
 
-.skills {
-  margin-bottom: 100px;
-}
+/* =========================
+   QUALIFICATION CARDS
+========================= */
 
 .row {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.col-lg-4 {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 34px;
+  padding: 45px;
+  backdrop-filter: blur(16px);
+  transition: .3s ease;
+  box-shadow: 0 20px 70px rgba(0,0,0,.35);
+  min-height: 620px;
+}
+
+.col-lg-4:hover {
+  transform: translateY(-8px);
+  border-color: rgba(111,90,255,.45);
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.45),
+    0 0 40px rgba(111,90,255,.18);
+}
+
+.col-lg-4 img {
+  border-radius: 24px;
+}
+
+.col-lg-4 h2 {
+  font-size: 2.2rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.col-lg-4 p {
+  color: rgba(255,255,255,.74);
+  line-height: 1.9;
+  font-size: 1.25rem;
+}
+
+/* =========================
+   FEATURETTE CONTAINERS
+========================= */
+
+.featurette {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 34px;
+  padding: 45px;
+  backdrop-filter: blur(16px);
+
+  transition: .3s ease;
+
+  box-shadow: 0 20px 70px rgba(0,0,0,.35);
+
+  margin-top: 50px;
   margin-bottom: 50px;
-  margin-top: 30px;
 }
 
-.featurette-heading {
-  margin-bottom: 50px;
-}
-.lead {
-  padding: 30px;
-}
-  h1 {
-    font-size: 50px;
-  }
+.featurette:hover {
+  transform: translateY(-8px);
 
-.featurette-divider {
-  margin-bottom: 0px;
+  border-color: rgba(111,90,255,.45);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.45),
+    0 0 40px rgba(111,90,255,.18);
 }
 
-.featurette .col-md-7 {
-  padding: 20px;
+.featurette .col-md-7,
+.featurette .col-md-5 {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .featurette-image {
-  padding-top: 40px;
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.5);
+}
+
+.text-muted {
+  color: #bfb8ff;
+}
+
+.lead,
+p {
+  color: rgba(255,255,255,.74);
+  line-height: 1.9;
+  font-size: 1.25rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+footer p,
+footer a {
+  color: rgba(255,255,255,.55);
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 991px) {
+
+  .featurette {
+    flex-direction: column;
+  }
+
+  .col-lg-4 {
+    margin-bottom: 30px;
+    min-height: auto;
+  }
+
+  .skills,
+  .featurette-heading,
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .aboutme {
+    font-size: 1.15rem;
+  }
+
+  .profile {
+    width: 95%;
+  }
+
+  .navbar-nav i {
+    font-size: 26px !important;
+  }
 }
