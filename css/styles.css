@@ -368,7 +368,7 @@ p {
 
 #contact .col-md-7,
 #contact .col-md-5 {
-  bbackground: rgba(15,15,18,.82);
+  background: rgba(15,15,18,.82);
   border: 1px solid rgba(255,255,255,.08);
 
   border-radius: 30px;
@@ -437,6 +437,20 @@ footer a:hover {
 
 @media (max-width: 768px) {
 
+  .navbar {
+    padding: 20px 28px;
+    border-radius: 34px;
+    transform: scale(1.15);
+  }
+
+  .navbar-nav {
+    gap: 22px;
+  }
+
+  .navbar-nav i {
+    font-size: 40px !important;
+  }
+
   body {
     text-align: center;
   }
@@ -457,7 +471,8 @@ footer a:hover {
   }
 
   .aboutme {
-    font-size: 1.65rem;
+    font-size: 1.9rem;
+    line-height: 1.8;
   }
 
   .profile {
@@ -473,14 +488,18 @@ footer a:hover {
   }
 
   .col-lg-4 p {
-    font-size: 1.55rem;
+    font-size: 1.6rem;
+    line-height: 1.9;
   }
 
   .lead {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    line-height: 1.9;
   }
 
+
   .featurette p {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    line-height: 1.95;
   }
 }
