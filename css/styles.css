@@ -426,22 +426,6 @@ footer a:hover {
 ========================= */
 
 @media (max-width: 991px) {
-
-  .featurette {
-    flex-direction: column;
-  }
-
-  .col-lg-4 {
-    margin-bottom: 30px;
-    min-height: auto;
-  }
-
-  .skills,
-  .featurette-heading,
-  h2 {
-    font-size: 2.5rem;
-  }
-
   h1 {
     font-size: 4rem;
   }
@@ -449,18 +433,10 @@ footer a:hover {
   .aboutme {
     font-size: 1.15rem;
   }
+}
 
-  .profile {
-    width: 95%;
-  }
+@media (max-width: 768px) {
 
-  .navbar-nav i {
-    font-size: 26px !important;
-  }
-
-  @media (max-width: 768px) {
-
-  /* General layout */
   body {
     text-align: center;
   }
@@ -470,22 +446,18 @@ footer a:hover {
     padding-right: 18px;
   }
 
-  /* Hero section */
   .top-div {
     padding-top: 190px;
     padding-bottom: 70px;
   }
 
   h1 {
-    font-size: 4.2rem;
+    font-size: 5.8rem;
     line-height: 1.05;
   }
 
   .aboutme {
-    font-size: 1.35rem;
-    line-height: 1.8;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 1.65rem;
   }
 
   .profile {
@@ -494,75 +466,21 @@ footer a:hover {
     border-radius: 24px;
   }
 
-  /* Navbar */
-  .navbar {
-    width: auto;
-    max-width: 92%;
-    padding: 14px 20px;
-  }
-
-  .navbar-nav {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .navbar-nav i {
-    font-size: 28px !important;
-  }
-
-  /* Headings */
   .skills,
   .featurette-heading,
   h2 {
     font-size: 2.7rem;
-    line-height: 1.15;
-    margin-bottom: 25px;
-  }
-
-  /* Qualification cards */
-  .col-lg-4 {
-    padding: 34px;
-    border-radius: 28px;
-    margin-bottom: 28px;
-  }
-
-  .col-lg-4 h2 {
-    font-size: 2rem;
   }
 
   .col-lg-4 p {
     font-size: 1.55rem;
-    line-height: 1.95;
   }
 
-  /* Featurette containers */
-  .featurette {
-    flex-direction: column !important;
-    gap: 30px;
-    padding: 34px;
-    border-radius: 28px;
-    text-align: center;
+  .lead {
+    font-size: 1.6rem;
   }
 
-  .featurette .col-md-5,
-  .featurette .col-md-7 {
-    width: 100%;
+  .featurette p {
+    font-size: 1.6rem;
   }
-
-  .featurette-image {
-    border-radius: 22px;
-  }
-
-  /* Paragraphs */
-  .lead,
-  p {
-    font-size: 2rem;
-    line-height: 2;
-  }
-
-  /* Footer */
-  footer {
-    padding-bottom: 40px;
-  }
-}
 }
