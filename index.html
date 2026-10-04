@@ -1,149 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico">
-  <title>Jared Tanksley Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05060a" />
+  <meta name="description" content="Jared Tanksley — Network engineering, project management, data visualization and computer systems. Explore Jared Tanksley’s work, experience and certifications." />
+  <title>Jared Tanksley | Telecommunications • Projects • Data • Systems</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <canvas id="neon-field" aria-hidden="true"></canvas>
+  <canvas id="neon-touch" aria-hidden="true"></canvas>
+  <div id="touch-light" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="ambient ambient-c" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-  <body>
-    <div class="blue-glow"></div>
-    <div class="pink-glow"></div>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-fixed-top">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-              <ul class="nav navbar-nav">
-                <li><a href="https://github.com/jaredtanksley"><i class="fa fa-github" style="font-size:48px;color:white"></i></a></li>
-                <li><a href="jared-tanksley-resume.pdf"><i class="fa fa-briefcase" style="font-size:48px;color:white"></i></a></li>
-                <li><a href="mailto:jared.tanksley1@gmail.com"><i class="fa fa-envelope-square" style="font-size:48px;color:white"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/jaredtanksley"><i class="fa fa-linkedin-square" style="font-size:48px;color:white"></i></a></li>
-              </ul>
-            </div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Jared Tanksley home">
+      <span class="brand-mark">JT</span>
+      <span class="brand-copy"><strong>Jared Tanksley</strong><small>Telecommunications. Projects. Data. Systems.</small></span>
+    </a>
+
+    <div class="header-actions">
+      <a class="mail-button" href="mailto:jared.tanksley1@gmail.com" aria-label="Email Jared">
+        <span>Email</span><span aria-hidden="true">↗</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="menu-panel" id="site-menu" aria-hidden="true">
+    <div class="menu-backdrop" data-close-menu></div>
+    <div class="menu-sheet">
+      <div class="menu-topline"><span>Navigate</span><button type="button" class="menu-close" data-close-menu aria-label="Close navigation">×</button></div>
+      <nav class="menu-links" aria-label="Main navigation">
+        <a href="#home"><span>01</span>Home</a>
+        <a href="#skills"><span>02</span>Capabilities</a>
+        <a href="#work"><span>03</span>Experience</a>
+        <a href="#projects"><span>04</span>Projects</a>
+        <a href="#education"><span>05</span>Education</a>
+        <a href="#contact"><span>06</span>Contact</a>
+      </nav>
+      <div class="menu-socials">
+        <a href="https://github.com/jaredtanksley" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jaredtanksley" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="jared-tanksley-resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <section class="hero section" id="home">
+      <div class="hero-grid wrap">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Yukon, Oklahoma</p>
+          <h1 class="profile-heading"><span>Jared</span><span>Tanksley<span class="dot cyan">.</span></span></h1>
+          <p class="profile-role">Network engineering <span> / </span> Project management <span> / </span> Data visualization <span> / </span> Computer systems</p>
+          <p class="hero-intro">I’m a project management professional with more than a decade of experience at AT&amp;T and a business degree from Oklahoma State University. I lead complex infrastructure initiatives from planning to closeout—connecting network engineering, project management, data visualization and computer systems to manage budgets, coordinate the people delivering the work and keep outcomes on track.</p>
+          <div class="profile-details" aria-label="Contact information">
+            <a href="mailto:jared.tanksley1@gmail.com">jared.tanksley1@gmail.com <span aria-hidden="true">↗</span></a>
+            <a href="tel:+14052568025">405-256-8025 <span aria-hidden="true">↗</span></a>
           </div>
-        </nav>
+          <div class="hero-cta">
+            <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="button ghost" href="jared-tanksley-resume.pdf" target="_blank" rel="noreferrer">Open résumé <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="profile-socials">
+            <a href="https://www.linkedin.com/in/jaredtanksley" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/jaredtanksley" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="#education">Education &amp; certifications ↓</a>
+          </div>
+        </div>
+
+        <figure class="image-card portrait-card hero-portrait reveal delay-1">
+          <img src="images/jared-headshot.png" alt="Jared Tanksley, wearing a collared shirt against a soft neon background" width="1122" height="990" fetchpriority="high" decoding="async" />
+        </figure>
       </div>
-    </div>
-  
+      <a class="scroll-cue" href="#skills"><span>Explore</span><i></i></a>
+    </section>
 
-  <div class="top-div">
-    <div class="text">
-      <h1>Jared Tanksley</h1>
-      <p class="aboutme">I'm A Senior Network Engineer, Project Manager, and Web Developer.</p>
-    </div>
-    <img src="images/background.jpg" alt="Generic Laptop Photo" class="profile">
-  </div>
-
-  <div class="bottom-half">
-    <hr class="featurette-divider">
-    <div class="row">
-      <h2 class="featurette-heading">Qualifications</h2>
-      <div class="col-lg-4">
-        <img class="img-circle" src="images/pole.png" alt="Generic placeholder image" width="140" height="140">
-        <h2>Engineering/Telecom</h2>
-        <p>I am currently a Senior Network Engineer with AT&T. I design blueprints and implement steps for the engineering processes within AT&T for the wireline and mobility infrastructures. I currently manage over 200 projects yearly that include work that ranges from residential to large-scale corporation network installation and integrations.  I also installed residential fiber optic, copper cable, satellite television, and IP-based television for over 5 years in a previous role.</p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img src="images/window.png" alt="Generic placeholder image" width="140" height="140">
-        <h2>Data & Visualization</h2>
-        <p>Utilize Microsoft Office Suite, PowerBI, Power Automate, Power Apps, and Palantir techologies to visualize and refine data for various uses.  Developed a dashboard and tracker for fiber neighborhood and cycle tracking.</p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="img-circle" src="images/code.png" alt="Generic placeholder image" width="140" height="140">
-        <h2>Web Development</h2>
-        <p>I started learning web development and design in 2020 and have completed Udacity's Full Stack Web Development Nanodegree and Udemy's Full Stack Web Development Bootcamp course. Coding skills currently include HTML/CSS/JS/AWS/Python/MongoDB/SQL/NodeJS/ReactJS.</p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-      <h2 class="featurette-heading">Education</h2>
-    <div class="row featurette">
-      <div class="col-md-5">
-        <img class="featurette-image img-responsive center-block" src="images/education-feature.png" alt="Oklahoma State University">
+    <section class="section section-shell" id="skills">
+      <div class="wrap section-grid">
+        <div class="section-label reveal"><span>01</span><p>Capabilities</p></div>
+        <div class="section-content">
+          <h2 class="section-title reveal">Clearer <em>data</em>. Better <em>delivery</em>. Smarter <em>systems</em>.</h2>
+          <div class="skill-grid">
+            <article class="skill-card reveal"><p class="skill-num">01</p><h3>Network Engineering</h3><p>Lead complex telecommunications infrastructure work with outside plant expertise, fiber network design, routing strategies, permitting and construction coordination.</p><div class="tag-row"><span>OSP</span><span>Fiber / FTTH</span><span>Route planning</span><span>Permitting</span><span>Telecommunications</span></div></article>
+            <article class="skill-card reveal delay-1"><p class="skill-num">02</p><h3>Project Management</h3><p>Own the full project life cycle: planning, budgeting, resource coordination, risk management, schedule tracking, executive reporting, delivery and financial closeout.</p><div class="tag-row"><span>Waterfall</span><span>Agile</span><span>Scrum</span><span>PMO support</span><span>Budget management</span><span>Stakeholder communication</span><span>Risk management</span></div></article>
+            <article class="skill-card reveal"><p class="skill-num">03</p><h3>Data Visualization</h3><p>Translate operational data into clear dashboards, executive reporting and project tracking tools that support visibility and decision-making.</p><div class="tag-row"><span>Power BI</span><span>Palantir</span><span>Excel</span><span>Dashboards</span><span>Executive reporting</span></div></article>
+            <article class="skill-card reveal delay-1"><p class="skill-num">04</p><h3>Computer Systems</h3><p>Connect computer, networking and cloud-based technologies with technical troubleshooting, systems support, data tools and development experience.</p><div class="tag-row"><span>Google IT Support</span><span>Microsoft 365</span><span>AWS</span><span>SQL / Python</span><span>Troubleshooting</span></div></article>
+            <article class="skill-card reveal"><p class="skill-num">05</p><h3>Automation &amp; Generative AI</h3><p>Improve process flows, automate repetitive tasks and engineer prompts that produce more useful results. Connect AI-assisted document processing with practical workflow tools.</p><div class="tag-row"><span>Power Automate</span><span>Microsoft Copilot</span><span>Generative AI</span><span>Prompt engineering</span><span>Process improvement</span></div></article>
+            <article class="skill-card reveal delay-1"><p class="skill-num">06</p><h3>GIS &amp; Spatial Intelligence</h3><p>Connect location data, subdivision activity and infrastructure demand through mapping, route planning and development tracking.</p><div class="tag-row"><span>QGIS</span><span>ArcGIS</span><span>ESRI</span><span>Spatial data</span></div></article>
+          </div>
+        </div>
       </div>
-      <div class="col-md-7">
-        <h2><span class="text-muted">Oklahoma State University.</span></h2>
-        <p class="lead">I began studying at Oklahoma State for a semester in Electrical Engineering Technologies in 2010. After that semester I transitioned to dual majoring in Accounting and Entrepreneurship. I graduated with a Bachelor's Degree in Entrepreneurship in 2015, and took high-level collegiate business accounting classes. Some of these classes include Advanced Financial Accounting, Tax Accounting, and Green Entrepreneurship.</p>
+    </section>
+
+    <section class="section section-shell" id="work">
+      <div class="wrap section-grid">
+        <div class="section-label reveal"><span>02</span><p>Experience</p></div>
+        <div class="section-content">
+          <h2 class="section-title reveal">Project ownership. Technical depth. Practical results.</h2>
+          <div class="work-list">
+            <article class="work-item reveal">
+              <div class="work-meta"><span>Nov 2021 — Present</span><strong>AT&amp;T, Inc.</strong><small>Oklahoma City, Oklahoma</small></div>
+              <div class="work-body"><h3>Senior Specialist Network Engineer</h3><p>End-to-end infrastructure project ownership, budget accountability and cross-functional delivery.</p><ul>
+                <li>Ranked as the highest-producing engineer for two consecutive years across Oklahoma, Kansas, Missouri and Arkansas.</li>
+                <li>Direct planning, budgeting, execution, stakeholder coordination and delivery for more than 200 annual infrastructure projects, from initiation through closeout.</li>
+                <li>Own project budgets, capital expenditures, asset capitalization and financial compliance to support successful delivery and operational accountability.</li>
+                <li>Developed a railroad planning and permitting process that generated more than $1 million in localized project cost savings through improved routing, design and execution.</li>
+                <li>Developed reporting, workflow automation, AI-assisted document processing and data visualization with Microsoft Copilot, Power BI, Power Automate, Palantir, Excel and Microsoft 365.</li>
+                <li>Coordinate municipalities, contractors, engineering and construction teams, government agencies and executive stakeholders; mentored four new engineers into independent project ownership.</li>
+              </ul></div>
+            </article>
+            <article class="work-item reveal">
+              <div class="work-meta"><span>Jun 2021 — Nov 2021</span><strong>AT&amp;T Mobility, Inc.</strong><small>Remote</small></div>
+              <div class="work-body"><h3>Premier Service Consultant</h3><p>Customer relationships, independent prioritization and collaborative service resolution in a remote environment.</p><ul>
+                <li>Consistently achieved monthly sales and performance objectives in a quota-driven environment while managing customer relationships and delivering solution-based recommendations.</li>
+                <li>Independently managed daily priorities, performance goals and customer engagement activities while working remotely.</li>
+                <li>Resolved complex billing, technical, order fulfillment and service issues by collaborating with customers, peers and internal stakeholders.</li>
+              </ul></div>
+            </article>
+            <article class="work-item reveal">
+              <div class="work-meta"><span>Nov 2015 — Jun 2021</span><strong>AT&amp;T Entertainment, Inc.</strong><small>Oklahoma City, Oklahoma</small></div>
+              <div class="work-body"><h3>Wire Technician</h3><p>Installation, maintenance and service restoration with sustained operational performance.</p><ul>
+                <li>Delivered installation, maintenance, troubleshooting and restoration for video, copper, satellite and fiber networks while consistently exceeding productivity and customer satisfaction objectives.</li>
+                <li>Ranked as the top-performing technician across the Oklahoma City metropolitan area in 2018, with the highest performance levels across all major operational measurement categories.</li>
+                <li>Maintained top-tier productivity, quality and customer satisfaction metrics for more than five consecutive years.</li>
+              </ul></div>
+            </article>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="row featurette">
-      <div class="col-md-5 col-md-push-7">
-        <img class="featurette-image img-responsive center-block" src="images/WGU_Logo.png" alt="Western Governors University">
+    <section class="section section-shell" id="projects">
+      <div class="wrap section-grid">
+        <div class="section-label reveal"><span>03</span><p>Selected work</p></div>
+        <div class="section-content">
+          <h2 class="section-title reveal">Problems turned into systems.</h2>
+          <div class="project-grid">
+            <article class="project-card project-feature reveal">
+              <div class="project-glow" aria-hidden="true"></div>
+              <div class="project-top"><span>Network engineering / Project management</span><span>01</span></div>
+              <div class="project-content"><p class="project-kicker">Railroad planning &amp; permitting</p><h3>Better planning.<br />$1M+ in savings.</h3><p>Developed and implemented a railroad planning and permitting process that generated more than $1 million in localized project cost savings through improved routing strategies, design methodologies and execution practices.</p><div class="tag-row"><span>Route planning</span><span>Cost management</span><span>Permitting</span><span>Process improvement</span></div></div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-top"><span>GIS / Spatial intelligence</span><span>02</span></div>
+              <div class="project-content"><p class="project-kicker">County plat intelligence</p><h3>See development.<br />Plan what’s next.</h3><p>Built a GIS-based tracking workflow for new subdivision plats and development activity, connecting location information with future infrastructure planning.</p><div class="tag-row"><span>ESRI</span><span>Spatial data</span><span>Planning</span></div></div>
+            </article>
+            <article class="project-card reveal delay-1">
+              <div class="project-top"><span>Data Visualization</span><span>03</span></div>
+              <div class="project-content"><p class="project-kicker">Dashboards &amp; project reporting</p><h3>Make project data<br />make sense.</h3><p>Developed neighborhood and project cycle tracking, reporting and data visualization solutions using Power BI, Palantir, Excel and Microsoft 365 to improve project visibility and decision-making.</p><div class="tag-row"><span>Power BI</span><span>Palantir</span><span>Excel</span><span>Project reporting</span></div></div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-top"><span>Automation</span><span>04</span></div>
+              <div class="project-content"><p class="project-kicker">Generative AI &amp; smarter process flows</p><h3>Better prompts.<br />Better workflows.</h3><p>Use generative AI to improve process flows, automate tasks and engineer prompts for more useful results. Connect Microsoft Copilot, AI-assisted document processing and Power Automate to reduce repetitive work and improve operational efficiency.</p><div class="tag-row"><span>Generative AI</span><span>Prompt engineering</span><span>Microsoft Copilot</span><span>Power Automate</span></div></div>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="col-md-7 col-md-pull-5">
-        <h2><span class="text-muted">Western Governor's University.</span></h2>
-        <p class="lead">I began a fast-track plan to obtain a second bachelors degree in 2026. I expect to complete a Bachelor's of Science in Computer Science at Western Governor's University by 2027. This knowledge has fostered and developed my base computer knowledge as well as specific knowledge in C++/Java programming languages.</p>
+    </section>
+
+    <section class="section section-shell" id="education">
+      <div class="wrap section-grid">
+        <div class="section-label reveal"><span>04</span><p>Education</p></div>
+        <div class="section-content">
+          <h2 class="section-title reveal">Adding extra layers.</h2>
+          <div class="education-grid">
+            <article class="edu-card degree-card reveal"><p>2015 / Bachelor’s degree</p><h3>Oklahoma State University</h3><strong>Bachelor of Business Administration — Entrepreneurship</strong><span>Stillwater, Oklahoma · Business, entrepreneurship and advanced accounting coursework.</span></article>
+            <article class="edu-card reveal"><p>2026 / Certification</p><h3>Google Project Management</h3><strong>Project management</strong><span>A formal foundation alongside hands-on project life cycle ownership.</span></article>
+            <article class="edu-card reveal delay-1"><p>2026 / Nanodegree</p><h3>Udacity Digital Project Management</h3><strong>Digital Project Management Nanodegree</strong><span>Bringing project management to technology and digital delivery.</span></article>
+            <article class="edu-card reveal"><p>2026 / Certification</p><h3>Google AI Professional Certificate</h3><strong>Applied artificial intelligence</strong><span>Generative AI, useful prompts and practical workflows.</span></article>
+            <article class="edu-card reveal delay-1"><p>2023 / Certification</p><h3>Google IT Support</h3><strong>Computer systems &amp; technical support</strong><span>Supporting a practical background in troubleshooting and networking.</span></article>
+          </div>
+          <div class="cert-strip reveal" aria-label="Additional certifications and awards">
+            <span>PMP Candidate · 2026</span>
+            <span>AT&amp;T Service Excellence Award · Q3 2023</span>
+            <span>AT&amp;T Making A Difference Award · Q2 2023</span>
+            <span>AT&amp;T Technical Knowledge Test II · 2019</span>
+            <span>Smith Defensive Driving · 2019</span>
+            <span>ACT Career Readiness — Gold · 2015</span>
+            <span>Choctaw Nation Higher Education Scholarship · 2010–2013</span>
+            <span>Oklahoma State Dean’s List · 2011</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <hr class="featurette-divider">
-
-   <h2 class="featurette-heading">Accolades & Certifications</h2>
-
-<div class="row featurette">
-
-  <div class="col-md-7 col-md-push-5">
-        <p class = "lead">
-          Google Project Management (2026)<br>
-          Udacity Digital Project Management Nanodegree (2026)<br>
-          AT&T Service Excellence Award (2023)<br>
-          AT&T Making A Difference Award (2023)<br>
-          Choctaw Nation Higher Education Scholaship (2010-2013)<br>
-          Google IT Support (2023)<br>
-          AT&T Technical Knowledge Test II (2019)<br>
-          Smith Defensive Driving (2019)<br>
-          ACT Career Readiness - Gold (2015)<br>
-          Oklahoma State's Dean List (2011)<br>
-        </p>      
+    <section class="section contact-section" id="contact">
+      <div class="wrap contact-wrap reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Contact</p>
+        <h2>Have a hard problem?<br /><span>Let’s make it simpler.</span></h2>
+        <p>Let’s talk project management, PMO support and technical project delivery—backed by network engineering, data visualization and computer systems.</p>
+        <div class="contact-actions">
+          <a class="button primary large" href="mailto:jared.tanksley1@gmail.com">jared.tanksley1@gmail.com <span>↗</span></a>
+          <a class="button ghost large" href="https://www.linkedin.com/in/jaredtanksley" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+        </div>
+        <div class="contact-meta"><span>Yukon, Oklahoma</span><span>•</span><a href="tel:+14052568025">405-256-8025</a><span>•</span><a href="https://github.com/jaredtanksley" target="_blank" rel="noreferrer">GitHub</a></div>
       </div>
-      <div class="col-md-5 col-md-pull-7">
-        <img class="featurette-image img-responsive center-block" src="images/pole-feature.PNG" alt="Lineman">
-      </div>
-    </div>
+    </section>
+  </main>
 
-    <hr class="featurette-divider">
-<h2 class="featurette-heading">Contact</h2>
-    <div class="row featurette">
-      
-      <div class="col-md-7">
-        
-        <p class="lead">I can be reached online or at the following locations:</p>
-        <p>Email: Jared.Tanksley1@gmail.com</p>
-        <p>Phone: 405-256-8025</p>
-        <p class="lead">Feel free to reach out with any questions or concerns!</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-responsive center-block" src="images/contact-feature.jpg" alt="Contact">
-      </div>
-    </div>
+  <footer class="site-footer wrap">
+    <p>© <span id="year"></span> Jared Tanksley</p>
+    <p>Telecommunications. Projects. Data. Systems.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
 
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-    <!-- FOOTER -->
-    <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2020 Jared Tanksley</p>
-    </footer>
-  </div>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
